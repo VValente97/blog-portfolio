@@ -10,10 +10,29 @@ const types = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
-  '.pdf': 'application/pdf',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
+  '.svg': 'image/svg+xml',
 };
 
-http.createServer((request, response) => {
+const publicFiles = new Set([
+  'index.html',
+  'privacidade.html',
+  'termos.html',
+  'robots.txt',
+  'app.css',
+  'script.js',
+]);
+const publicAssetExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg']);
+
+function isPublicFile(relative, extension) {
+  if (publicFiles.has(relative)) return true;
+  return relative.startsWith('assets/') && publicAssetExtensions.has(extension);
+}
+
+const server = http.createServer((request, response) => {
   let requested;
   try {
     requested = decodeURIComponent(request.url.split('?')[0]);
@@ -24,8 +43,15 @@ http.createServer((request, response) => {
   const relative = requested === '/' ? 'index.html' : requested.replace(/^\/+/, '');
   const file = path.resolve(root, relative);
   const relativeToRoot = path.relative(root, file);
+  const extension = path.extname(file).toLowerCase();
+  const hasHiddenSegment = relative.split('/').some((segment) => segment.startsWith('.'));
 
-  if (relativeToRoot.startsWith('..') || path.isAbsolute(relativeToRoot)) {
+  if (
+    relativeToRoot.startsWith('..') ||
+    path.isAbsolute(relativeToRoot) ||
+    hasHiddenSegment ||
+    !isPublicFile(relative, extension)
+  ) {
     response.writeHead(403);
     return response.end('Forbidden');
   }
@@ -35,7 +61,6 @@ http.createServer((request, response) => {
       response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
       return response.end('Not found');
     }
-    const extension = path.extname(file);
     const isDocument = extension === '.html';
     const headers = {
       'Content-Type': types[extension] || 'application/octet-stream',
@@ -62,6 +87,10 @@ http.createServer((request, response) => {
       response.end(compressed);
     });
   });
-}).listen(4173, '0.0.0.0', () => {
-  console.log('Blog running at http://localhost:4173 and available on the local network');
+});
+
+const host = process.env.BLOG_HOST === '0.0.0.0' ? '0.0.0.0' : '127.0.0.1';
+
+server.listen(4173, host, () => {
+  console.log(`Blog running at http://${host}:4173`);
 });

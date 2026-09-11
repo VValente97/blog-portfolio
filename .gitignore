@@ -1,0 +1,32 @@
+# Variáveis de ambiente e credenciais locais
+.env
+.env.*
+!.env.example
+
+# Dependências e relatórios
+node_modules/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dados e artefatos locais
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.bak
+*.backup
+*.dump
+
+# Certificados e chaves privadas
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Arquivos gerados pelo sistema e depuração
+.DS_Store
+Thumbs.db
+*.map
