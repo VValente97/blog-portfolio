@@ -17,8 +17,10 @@
         "knowsAbout": ["React", "Next.js", "Node.js", "Python", "AWS", "APIs", "UX/UI"]
       }
     </script>
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="app.css?v=20260912" />
     <script src="script.js" defer></script>
+    <script src="feed-data.js" defer></script>
+    <script src="feed.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -53,11 +55,9 @@
 
       <section class="social-feed" id="projetos">
         <div class="section-wrap social-shell">
-          <aside class="social-sidebar"><div class="social-avatar">JV</div><strong>João Vitor Valente</strong><span>Fullstack Developer</span><p>Registros de projetos, estudos e entregas em andamento.</p><div class="social-stats"><span><b>03</b> posts</span><span><b>2026</b> arquivo</span></div></aside>
+          <aside class="social-sidebar"><div class="social-avatar">JV</div><strong>João Vitor Valente</strong><span>Fullstack Developer</span><p>Registros de projetos, estudos e entregas em andamento.</p><div class="social-stats"><span><b data-feed-count>01</b> <span data-feed-label>post</span></span><span><b>2026</b> arquivo</span></div></aside>
           <div class="social-timeline"><div class="social-heading"><div><p class="eyebrow">Atualizações</p><h2>Feed de construção</h2></div><span class="feed-live"><i></i> online</span></div>
-            <article class="social-post"><header><div class="post-avatar">JV</div><div><strong>João Vitor Valente</strong><span>Hoje · Portfólio</span></div><button aria-label="Mais opções" type="button">•••</button></header><div class="post-content"><h3>Nova identidade visual do portfólio</h3><p>O blog ganhou uma interface mais pessoal, escura e focada no meu processo de construção.</p></div><footer><span>♡ 0</span><span>↗ compartilhar</span><span>ver projeto →</span></footer></article>
-            <article class="social-post"><header><div class="post-avatar">JV</div><div><strong>João Vitor Valente</strong><span>Em breve · Projeto</span></div><button aria-label="Mais opções" type="button">•••</button></header><div class="post-content"><h3>Próximo projeto em preparação</h3><p>Este espaço vai reunir contexto, decisões técnicas e a evolução de cada projeto que eu publicar.</p></div><footer><span>♡ 0</span><span>↗ compartilhar</span><span>acompanhar →</span></footer></article>
-            <article class="social-post"><header><div class="post-avatar">JV</div><div><strong>João Vitor Valente</strong><span>Arquivo · Trajetória</span></div><button aria-label="Mais opções" type="button">•••</button></header><div class="post-content"><h3>Experiência fullstack no TRT8</h3><p>Interfaces responsivas, APIs e colaboração em soluções para o setor público.</p></div><footer><span>♡ 0</span><span>↗ compartilhar</span><span>ler mais →</span></footer></article>
+            <div id="feed-posts" class="social-post-list" aria-live="polite"></div>
           </div>
         </div>
       </section>
@@ -90,7 +90,7 @@
 
       <section class="experience section-wrap">
         <div class="section-heading"><div><p class="eyebrow">Experiência</p></div></div>
-        <article class="experience-item"><div class="experience-date">JAN 2024 — DEZ 2025<br />BELÉM, PA · PRESENCIAL</div><div><h3>Desenvolvedor Front-End (Estágio)</h3><p class="experience-company">Tribunal Regional do Trabalho da 8ª Região — TRT8</p><p>Atuei no desenvolvimento e manutenção de interfaces web responsivas, contribuindo para a usabilidade e acessibilidade de sistemas internos. Colaborei com a equipe na implementação de soluções eficientes para o setor público, trabalhando também com desenvolvimento back-end e APIs.</p><div class="tech-tags"><span>React</span><span>Next.js</span><span>JavaScript</span><span>PHP</span><span>Python</span><span>Oracle</span><span>MySQL</span><span>Bootstrap</span><span>AWS S3</span></div></div></article>
+        <article class="experience-item"><div class="experience-date">JAN 2024 — DEZ 2025<br />BELÉM, PA · PRESENCIAL</div><div><h3>Desenvolvedor (Estágio)</h3><p class="experience-company">Tribunal Regional do Trabalho da 8ª Região — TRT8</p><p>Atuei no desenvolvimento e manutenção de interfaces web responsivas, contribuindo para a usabilidade e acessibilidade de sistemas internos. Colaborei com a equipe na implementação de soluções eficientes para o setor público, trabalhando também com desenvolvimento back-end e APIs.</p><div class="tech-tags"><span>React</span><span>Next.js</span><span>JavaScript</span><span>PHP</span><span>Python</span><span>Oracle</span><span>MySQL</span><span>Bootstrap</span><span>AWS S3</span></div></div></article>
       </section>
 
       <section class="certificates section-wrap" id="certificados">

@@ -24,6 +24,8 @@ const publicFiles = new Set([
   'robots.txt',
   'app.css',
   'script.js',
+  'feed-data.js',
+  'feed.js',
 ]);
 const publicAssetExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg']);
 
