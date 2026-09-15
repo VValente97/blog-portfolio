@@ -8,4 +8,13 @@ window.blogFeedPosts = [
     action: 'ver blog →',
     preview: 'blog',
   },
+  {
+    category: 'Hoje · Projeto pessoal',
+    title: 'Açaí na Cuia',
+    description: 'uma página web para conectar e aumentar o alcance de vendas de uma microempresa.',
+    action: 'ver projeto →',
+    preview: 'image',
+    image: 'assets/acai-na-cuia-thumbnail.png',
+    imageAlt: 'Miniatura do projeto Açaí na Cuia em notebook e celular',
+  },
 ];

@@ -37,6 +37,17 @@
     return preview;
   };
 
+  const createImagePreview = (post) => {
+    const preview = createElement('div', 'project-post-preview');
+    const image = document.createElement('img');
+    image.src = post.image;
+    image.alt = post.imageAlt || post.title;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    preview.append(image);
+    return preview;
+  };
+
   const createPost = (post) => {
     const article = createElement('article', 'social-post social-post-featured');
     const header = createElement('header');
@@ -51,6 +62,7 @@
     const content = createElement('div', 'post-content');
     content.append(createElement('h3', '', post.title));
     if (post.preview === 'blog') content.append(createBlogPreview());
+    if (post.preview === 'image' && post.image) content.append(createImagePreview(post));
     content.append(createElement('p', '', post.description));
 
     const footer = createElement('footer');
