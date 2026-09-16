@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# Adicione aqui a URL absoluta do sitemap após definir o domínio público.
+Sitemap: https://blog-portfolio-a8w.pages.dev/sitemap.xml

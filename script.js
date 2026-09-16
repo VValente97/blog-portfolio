@@ -38,6 +38,36 @@ copyEmailButton?.addEventListener('click', async () => {
   }
 });
 
+const analyticsMeasurementId = 'G-BELMT0NW0V';
+const consentStorageKey = 'jv-portfolio-analytics-consent';
+const consentBanner = document.querySelector('[data-consent-banner]');
+
+function loadAnalytics() {
+  if (window.__analyticsLoaded) return;
+  window.__analyticsLoaded = true;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', analyticsMeasurementId, { anonymize_ip: true });
+  const analyticsScript = document.createElement('script');
+  analyticsScript.async = true;
+  analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}`;
+  document.head.append(analyticsScript);
+}
+
+function saveConsent(value) {
+  localStorage.setItem(consentStorageKey, value);
+  consentBanner?.setAttribute('hidden', '');
+  if (value === 'accepted') loadAnalytics();
+}
+
+const storedConsent = localStorage.getItem(consentStorageKey);
+if (storedConsent === 'accepted') loadAnalytics();
+else if (!storedConsent) consentBanner?.removeAttribute('hidden');
+
+document.querySelector('[data-consent-accept]')?.addEventListener('click', () => saveConsent('accepted'));
+document.querySelector('[data-consent-deny]')?.addEventListener('click', () => saveConsent('essential'));
+
 const portfolioVitals = { lcp: null, inp: null, cls: 0 };
 window.__portfolioVitals = portfolioVitals;
 
