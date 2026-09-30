@@ -117,3 +117,97 @@ body.astro-mode .consent-banner{z-index:40}
 @media(max-width:700px){.astro-intro h1{font-size:clamp(47px,10vw,64px)}.astro-planet-label{display:none}.astro-planet:nth-child(1) .astro-planet-label,.astro-planet:nth-child(4) .astro-planet-label,.astro-planet:nth-child(6) .astro-planet-label,.astro-planet.is-active .astro-planet-label{display:block}}
 @media(max-width:420px){.astro-intro h1{font-size:47px}}
 @media(prefers-reduced-motion:reduce){.astro-panel,.astro-intro,.mode-switch button{transition:none}.astro-signal-bars i{animation:none}}
+
+/* Orbital atlas: the same navy/cyan identity as the normal portfolio. */
+body.astro-mode{background:#050a12;color:#edf5ff}
+.astro-view{color:#edf5ff;background:radial-gradient(ellipse at 72% 47%,#0c2840 0,#081827 28%,#050a12 68%)}
+.astro-view::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(#36627a38 1px,transparent 1px),linear-gradient(90deg,#36627a38 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,transparent 15%,#000 100%)}
+body.astro-mode .site-header{border-bottom-color:#24465d;background:linear-gradient(180deg,#050d18f5,#071420cf);backdrop-filter:blur(14px)}
+body.astro-mode .logo{border:1px solid #72d7ff88;background:linear-gradient(145deg,#123650,#081827);box-shadow:0 0 22px #38bce633;color:#edf5ff;font:700 20px ui-serif,Georgia,serif;letter-spacing:-1px}
+body.astro-mode .logo span{color:#72d7ff!important}
+body.astro-mode .astro-brand-label{color:#edf5ff}
+body.astro-mode .astro-brand-label small{color:#83a7bd}
+.mode-switch,.astro-language,body.astro-mode .mode-switch,body.astro-mode .astro-language{border-color:#31526a;background:#091b2c}
+.mode-switch button,body.astro-mode .mode-switch button,body.astro-mode .astro-language button{color:#a9c5d7}
+.mode-switch button[aria-pressed="true"],body.astro-mode .mode-switch button[aria-pressed="true"],body.astro-mode .astro-language button[aria-pressed="true"]{background:#72d7ff;color:#07111f;box-shadow:none}
+.mode-switch button:focus-visible,.astro-language button:focus-visible,.astro-view button:focus-visible,.astro-view a:focus-visible{outline-color:#72d7ff}
+.astro-readout,.astro-hint{color:#85acc2}
+.astro-status{border-color:#28506a;background:#0a2032d9;color:#c5e4f3}
+.astro-status span{background:#72d7ff;box-shadow:0 0 12px #72d7ff88}
+.astro-intro{border-left:2px solid #72d7ff66;padding-left:clamp(16px,2vw,28px)}
+.astro-intro h1{font-weight:650;letter-spacing:-.065em}
+.astro-intro h1 span{background:linear-gradient(100deg,#edf5ff,#72d7ff 58%,#388cb8);background-clip:text;-webkit-background-clip:text}
+.astro-role{color:#72d7ff}
+.astro-lead,.astro-panel-content>p,.astro-panel-content .astro-card p{color:#a9c2d2}
+.astro-action-primary{background:#72d7ff;color:#061421;box-shadow:0 8px 26px #3dbbe533}
+.astro-action-primary:hover{background:#bceeff}
+.astro-action-secondary{border-color:#315d76;background:#0a2032ce;color:#e6f4fc}
+.astro-action-secondary:hover{border-color:#72d7ff}
+.astro-stats{border-top-color:#31536a}.astro-stats span{color:#86aac0}
+.astro-dock{border-color:#2b526a;border-radius:14px;background:#091c2be8;box-shadow:0 20px 50px #02070eb8}
+.astro-dock button{border-radius:9px;color:#b1cbd9}.astro-dock button small{color:#78a2b7}
+.astro-dock button.is-active{background:#72d7ff;color:#061421}.astro-dock button.is-active small{color:#174a66}
+.astro-panel{border-color:#31566e;border-radius:16px;background:linear-gradient(145deg,#10283bf5,#081725f7);box-shadow:0 28px 75px #01060dc9,inset 0 1px #9ee7ff1e}
+.astro-panel-header,.astro-panel>h2,.astro-panel-footer{border-color:#31536a88}
+.astro-panel-orbit,.astro-card small{color:#72d7ff}.astro-panel-body{color:#8daec0}
+.astro-panel-close,.astro-panel-footer button{border-color:#3b6178;background:#102c40;color:#e7f6ff}
+.astro-panel-content{scrollbar-color:#347394 transparent}
+.astro-card{border-color:#31516a;border-radius:10px;background:#1230479c}
+.astro-tags span{border-color:#38617a;color:#c0eafa}
+.astro-panel-content a{color:#83dfff}
+.astro-project-link{border-color:#4c9abd;background:#103a52;color:#c8f2ff}
+.astro-project-link:hover{background:#18516d}
+.astro-link-list a{border-color:#2c4b62;color:#d7edf7}.astro-link-list a:hover{color:#72d7ff}
+.astro-contact-form,.astro-legal-links{border-color:#2c4b62}.astro-contact-form label{color:#a9c3d2}
+.astro-contact-form input,.astro-contact-form textarea{border-color:#3b6178;background:#071927;color:#edf5ff}
+.astro-contact-form input:focus,.astro-contact-form textarea:focus{outline-color:#72d7ff}
+.astro-panel-footer button:hover{border-color:#72d7ff;color:#bceeff}
+.astro-standby{background:#05101ce8}.astro-standby-card{border-color:#32617a;background:radial-gradient(circle at 50% 0,#18445f,#091b2b 75%)}
+.astro-standby-meta,.astro-standby-note{color:#aac9dc}.astro-signal-bars i{background:#72d7ff;box-shadow:0 0 12px #72d7ff88}
+.astro-standby-card button{border-color:#3e6b83;background:#12344a;color:#edf5ff}
+@keyframes astro-signal{to{height:50px;background:#c0f0ff}}
+
+/* Illustrative navigation nodes, not photographic solar-system textures. */
+.astro-planet{color:#a9cbdc;filter:drop-shadow(0 0 10px #062339)}
+.astro-planet:hover,.astro-planet.is-active{color:#bceeff;filter:drop-shadow(0 0 18px #4dcfff88)}
+.astro-planet-label{border-radius:4px;background:#071827d9;letter-spacing:.13em}
+.astro-planet:hover .astro-planet-label,.astro-planet.is-active .astro-planet-label{border-color:#72d7ff88}
+.astro-planet-sphere{position:relative;isolation:isolate;border:1px solid #a6e9ff99;background:radial-gradient(circle at 32% 28%,#bdefff,#368eb4 35%,#174964 68%,#081d32 100%);box-shadow:inset -6px -8px 12px #06152488,inset 2px 2px 8px #d9faff55,0 0 16px #55c7ee44}
+.astro-planet-sphere::before{content:"";position:absolute;inset:-5px;border:1px dashed #72d7ff70;border-radius:50%;transform:rotate(-22deg)}
+.astro-planet-sphere::after{content:"";position:absolute;inset:24%;border:1px solid #d9f9ff70;border-radius:50%;background:#d5f8ff25}
+.astro-body-sun .astro-planet-sphere{border-color:#bceeff;background:radial-gradient(circle at 38% 33%,#f4fcff 0,#bceeff 16%,#67cfe9 42%,#116585 72%,#09263c);box-shadow:0 0 16px #72d7ff,0 0 60px #2cafd266,0 0 120px #187a9e33}
+.astro-body-sun .astro-planet-sphere::before{inset:-11px;border-style:solid;border-color:#72d7ff77}
+.astro-body-mercury .astro-planet-sphere{background:radial-gradient(circle at 28% 25%,#ecf8ff,#9bb9c8 38%,#365468 75%,#142536)}
+.astro-body-venus .astro-planet-sphere{background:repeating-linear-gradient(160deg,#7ec5d3 0 4px,#315f7a 5px 8px,#153e58 9px 13px)}
+.astro-body-earth .astro-planet-sphere{background:radial-gradient(circle at 26% 24%,#d6ffff,#4bbcbf 30%,#246c9c 55%,#123855 76%,#092033)}
+.astro-body-mars .astro-planet-sphere{background:radial-gradient(circle at 28% 24%,#a9ddfa,#5b9dc6 40%,#2b547c 69%,#152e4b)}
+.astro-body-jupiter .astro-planet-sphere{background:repeating-linear-gradient(170deg,#a8e0ed 0 5px,#4c9fc2 6px 10px,#225c80 11px 16px,#163954 17px 21px)}
+.astro-body-saturn .astro-planet-sphere{background:radial-gradient(circle at 28% 24%,#d0f5f3,#60aebc 40%,#22516a 75%,#102d43)}
+.astro-body-saturn .astro-planet-sphere::after{inset:27% -48%;border:4px solid #88dcefad;background:none;transform:rotate(-27deg)}
+.astro-body-uranus .astro-planet-sphere{background:linear-gradient(145deg,#d9faff,#69c8df 30%,#2b7e9b 65%,#123851)}
+.astro-body-neptune .astro-planet-sphere{background:radial-gradient(circle at 27% 23%,#b4e8ff,#4089c4 40%,#1a4c86 70%,#10254e)}
+.astro-probe{color:#89dbf5;filter:drop-shadow(0 0 9px #72d7ff88)}.astro-probe:hover{color:#d7f8ff}
+@media(max-width:700px){.astro-intro{left:16px;width:calc(100% - 32px);padding-left:12px}.astro-view::before{background-size:48px 48px}.astro-dock{border-radius:12px}.astro-panel{border-radius:13px}}
+
+/* Planet-specific maps retain the recognizable natural colors from the reference. */
+.astro-body-sun .astro-planet-sphere{border-color:#ffe3a2;background:radial-gradient(circle at 34% 25%,#fffbe0 0,#ffe08a 22%,#ffae3d 53%,#d9581e 82%,#8b2e1a 100%);box-shadow:0 0 18px #ffbe67,0 0 62px #e97b305c,0 0 118px #a45d253d}
+.astro-body-sun .astro-planet-sphere::before{border-color:#ffcc796b}
+.astro-planet:not(.astro-body-sun) .astro-planet-sphere{border-color:var(--surface-border,#d1e1ec);background-image:radial-gradient(circle at 27% 21%,#ffffff38 0,transparent 44%,#07111f60 100%),var(--surface-map);background-size:100% 100%,var(--surface-size,cover);background-position:center,var(--surface-position,center);background-repeat:no-repeat;background-color:var(--surface-tint);background-blend-mode:normal,normal;box-shadow:inset -5px -6px 9px #07111f9c,inset 2px 2px 5px #ffffff70,0 0 16px var(--surface-glow,#ffffff44)}
+.astro-planet:not(.astro-body-sun) .astro-planet-sphere::after{inset:0;border:0;background:radial-gradient(circle at 30% 25%,transparent 27%,#04111c40 85%,#020a1494 100%);pointer-events:none}
+.astro-body-mercury{--surface-map:url("assets/planets/mercury.jpg");--surface-tint:#918f8c;--surface-size:auto 100%;--surface-position:38% center;--surface-border:#b1afb0;--surface-glow:#a2a9bb60}
+.astro-body-venus{--surface-map:url("assets/planets/venus_atmosphere.jpg");--surface-tint:#c98b3b;--surface-border:#efc47c;--surface-glow:#d6984866}
+.astro-body-earth{--surface-map:url("assets/planets/earth_daymap.jpg");--surface-tint:#195b9c;--surface-size:126% 126%;--surface-border:#8bc5da;--surface-glow:#3e9aca70}
+.astro-body-mars{--surface-map:url("assets/planets/mars.jpg");--surface-tint:#a84f35;--surface-border:#db8460;--surface-glow:#c46b4366}
+.astro-body-jupiter{--surface-map:url("assets/planets/jupiter.jpg");--surface-tint:#c2a07c;--surface-border:#ead3b0;--surface-glow:#c9ab8666}
+.astro-body-saturn{--surface-map:url("assets/planets/saturn.jpg");--surface-tint:#dfcaa5;--surface-size:auto 100%;--surface-position:50% center;--surface-border:#f0ddb9;--surface-glow:#e8c79b66}
+.astro-planet.astro-body-saturn .astro-planet-sphere::after{inset:29% -48%;border:4px solid #e9d1a7d9;background:none;transform:rotate(-27deg)}
+.astro-body-uranus{--surface-map:url("assets/planets/uranus.jpg");--surface-tint:#a6dbe1;--surface-border:#c5edf0;--surface-glow:#9cdbdf66}
+.astro-body-neptune{--surface-map:url("assets/planets/neptune.jpg");--surface-tint:#1252a0;--surface-border:#6ab4f2;--surface-glow:#2e7ccc77}
+.astro-legal-links{flex-wrap:wrap;line-height:1.5}
+
+/* Keep accented glyphs and descenders inside their line boxes. */
+body.astro-mode .astro-brand-label{min-width:max-content;overflow:visible;line-height:1.25}
+body.astro-mode .astro-brand-label strong{display:block;padding:.05em 0 .08em;line-height:1.2}
+body.astro-mode .astro-brand-label small{display:block;padding:.08em 0 .12em;line-height:1.35}
+.astro-intro h1{overflow:visible;padding:.045em 0 .12em;line-height:1.08;letter-spacing:-.045em}
+.astro-intro h1 span{padding-bottom:.06em;line-height:inherit}

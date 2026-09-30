@@ -71,7 +71,11 @@
     const terms = make('a', '', language === 'en' ? 'Terms' : 'Termos');
     privacy.href = 'privacidade.html';
     terms.href = 'termos.html';
-    list.append(privacy, terms);
+    const textureCredit = make('a', '', language === 'en' ? 'Planet textures · Solar System Scope (CC BY 4.0)' : 'Texturas dos planetas · Solar System Scope (CC BY 4.0)');
+    textureCredit.href = 'https://www.solarsystemscope.com/textures/';
+    textureCredit.target = '_blank';
+    textureCredit.rel = 'noopener noreferrer';
+    list.append(privacy, terms, textureCredit);
     return list;
   };
 
@@ -343,15 +347,15 @@
     const base = Math.min(width * (width < 700 ? .34 : width < 1100 ? .28 : .35), height * (width < 700 ? .38 : .54)) * zoom;
     context.clearRect(0, 0, width, height);
     const glow = context.createRadialGradient(centerX, centerY, 0, centerX, centerY, base * 1.5);
-    glow.addColorStop(0, '#ad521d24');
-    glow.addColorStop(.48, '#36233213');
-    glow.addColorStop(1, '#04050b00');
+    glow.addColorStop(0, '#1b90b72b');
+    glow.addColorStop(.48, '#17415c18');
+    glow.addColorStop(1, '#050a1200');
     context.fillStyle = glow;
     context.fillRect(0, 0, width, height);
 
     for (const star of stars) {
       const alpha = reducedMotion ? .63 : .38 + .28 * (1 + Math.sin(clock * .001 + star.phase));
-      context.fillStyle = `rgba(220,226,255,${alpha})`;
+      context.fillStyle = `rgba(157,218,236,${alpha * .72})`;
       context.beginPath();
       context.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
       context.fill();
@@ -361,9 +365,11 @@
       const ry = rx * .35;
       context.beginPath();
       context.ellipse(centerX, centerY, rx, ry, -.15 + rotation * .12, 0, Math.PI * 2);
-      context.strokeStyle = `rgba(171,174,211,${index === current ? .28 : .14})`;
+      context.strokeStyle = `rgba(102,184,211,${index === current ? .42 : .17})`;
       context.lineWidth = 1;
+      context.setLineDash(index === current ? [] : [2, 7]);
       context.stroke();
+      context.setLineDash([]);
       const section = sections[index];
       const angle = section.phase + rotation + (reducedMotion ? 0 : clock * .000012 / Math.sqrt(index));
       const x = centerX + Math.cos(angle) * rx;
@@ -372,12 +378,12 @@
       planetButtons[index].style.top = `${y}px`;
       planetButtons[index].style.opacity = current !== null && current !== index ? '.72' : '1';
     }
-    // A sparse asteroid belt separates the inner and outer planets.
-    for (let index = 0; index < 170; index++) {
+    // Fine chart marks give this scene a technical, illustrated-map feel.
+    for (let index = 0; index < 90; index++) {
       const angle = index * 2.399 + rotation;
       const radius = base * (.62 + (index % 9) * .012);
-      context.fillStyle = `rgba(201,191,165,${.13 + (index % 5) * .055})`;
-      context.fillRect(centerX + Math.cos(angle) * radius, centerY + Math.sin(angle) * radius * .35, 1.2, 1.2);
+      context.fillStyle = `rgba(114,215,255,${.1 + (index % 5) * .035})`;
+      context.fillRect(centerX + Math.cos(angle) * radius, centerY + Math.sin(angle) * radius * .35, 1, 1);
     }
     planetButtons[0].style.left = `${centerX}px`;
     planetButtons[0].style.top = `${centerY}px`;
@@ -492,7 +498,7 @@
     main.inert = astro;
     if (footer) footer.inert = astro;
     buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.siteMode === mode)));
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', astro ? '#04050a' : '#07111f');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', astro ? '#050a12' : '#07111f');
     if (persist) {
       try { localStorage.setItem(storageKey, mode); } catch { /* Private mode can block storage. */ }
     }
