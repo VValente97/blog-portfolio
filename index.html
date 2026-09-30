@@ -20,21 +20,74 @@
     </script>
     <link rel="stylesheet" href="app.css?v=20260912-3" />
     <link rel="stylesheet" href="feed-project.css?v=20260915-1" />
+    <link rel="stylesheet" href="astro-mode.css?v=20260930-7" />
     <script src="script.js?v=20260916-analytics" defer></script>
     <script src="feed-data.js?v=20260915-1" defer></script>
     <script src="feed.js?v=20260915-1" defer></script>
+    <script src="astro-mode.js?v=20260930-7" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="logo" href="#top" aria-label="João Vitor Valente, início">JV<span>.</span></a>
+      <span class="astro-brand-label"><strong>João Vitor Valente</strong><small>DESENVOLVEDOR FULLSTACK</small></span>
       <nav class="nav" aria-label="Navegação principal">
         <a href="#projetos">Projetos</a>
         <a href="#sobre">Sobre mim</a>
         <a href="#notas">Notas</a>
       </nav>
+      <div class="astro-language" role="group" aria-label="Idioma do modo Astro">
+        <button type="button" data-astro-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" data-astro-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <div class="mode-switch" role="group" aria-label="Aparência do portfólio">
+        <button type="button" data-site-mode="normal" aria-pressed="true">Normal</button>
+        <button type="button" data-site-mode="astro" aria-pressed="false"><span aria-hidden="true">✦</span> Astro</button>
+      </div>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <a class="header-cta" href="https://www.linkedin.com/in/jo%C3%A3o-vitor-valente-4b6056234/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
     </header>
+
+    <div class="astro-view" data-astro-view hidden>
+      <div class="astro-scene" data-astro-scene aria-label="Sistema solar interativo do portfólio">
+        <canvas class="astro-orbits" aria-hidden="true"></canvas>
+        <div class="astro-planets" data-astro-planets></div>
+      </div>
+      <div class="astro-readout" data-astro-readout aria-label="Horário de Brasília"></div>
+      <section class="astro-intro" aria-label="Apresentação">
+        <p class="astro-status"><span aria-hidden="true"></span> Disponível para desafios</p>
+        <h1>João Vitor <span>Valente</span></h1>
+        <p class="astro-role">Desenvolvedor Fullstack · Web · APIs · Cloud</p>
+        <p class="astro-lead">Sou formado em Ciência da Computação e desenvolvedor fullstack. Aqui compartilho minha trajetória, meus projetos e o que estou aprendendo enquanto construo novas soluções.</p>
+        <div class="astro-actions">
+          <button type="button" class="astro-action-primary" data-astro-explore>Explorar o sistema <span aria-hidden="true">→</span></button>
+          <a href="mailto:valentedev00@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio" class="astro-action-secondary">Entrar em contato <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="astro-stats"><div><strong data-astro-project-count>02</strong><span>projetos no feed</span></div><div><strong>2026</strong><span>formação</span></div></div>
+      </section>
+      <p class="astro-hint">Arraste para girar · role para aproximar · clique em um planeta</p>
+      <aside class="astro-panel" data-astro-panel aria-label="Conteúdo da seção" aria-hidden="true" inert>
+        <div class="astro-panel-header">
+          <div><span class="astro-panel-orbit" data-astro-orbit></span><span class="astro-panel-body" data-astro-body></span></div>
+          <button type="button" class="astro-panel-close" data-astro-close aria-label="Fechar seção">✕</button>
+        </div>
+        <h2 data-astro-title></h2>
+        <div class="astro-panel-content" data-astro-content></div>
+        <div class="astro-panel-footer">
+          <button type="button" data-astro-prev>← Anterior</button>
+          <button type="button" data-astro-next>Próximo →</button>
+        </div>
+      </aside>
+      <aside class="astro-standby" data-astro-standby hidden role="dialog" aria-modal="true" aria-labelledby="astro-standby-title">
+        <div class="astro-standby-card">
+          <p class="astro-standby-meta">JV · SINAL DISTANTE</p>
+          <div class="astro-signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <h2 id="astro-standby-title">Aguarde o sinal</h2>
+          <p class="astro-standby-note">Uma nova transmissão está a caminho.</p>
+          <button type="button" data-astro-standby-close>Voltar ao sistema</button>
+        </div>
+      </aside>
+      <nav class="astro-dock" data-astro-dock aria-label="Seções do modo Astro"></nav>
+    </div>
 
     <main id="top">
       <section class="hero section-wrap">

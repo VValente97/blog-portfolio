@@ -1,0 +1,119 @@
+.mode-switch{display:inline-flex;align-items:center;gap:3px;padding:4px;border:1px solid #28445e;border-radius:999px;background:#081421;font:600 11px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap}
+.mode-switch button{padding:8px 11px;border:0;border-radius:999px;background:transparent;color:#8fa6bb;font:inherit;cursor:pointer;transition:background .25s,color .25s,box-shadow .25s}
+.mode-switch button[aria-pressed="true"]{background:#183149;color:#f0f8ff}
+.mode-switch button:focus-visible,.astro-language button:focus-visible,.astro-view button:focus-visible,.astro-view a:focus-visible{outline:2px solid #ffc174;outline-offset:3px}
+.astro-language{display:none}
+.astro-brand-label{display:none}
+.astro-view[hidden]{display:none}
+body.astro-mode{overflow:hidden;background:#04050b;color:#f0eff6}
+body.astro-mode main,body.astro-mode>.footer{display:none}
+body.astro-mode .site-header{position:fixed;inset:0 0 auto;z-index:30;max-width:none;height:75px;padding:0 clamp(20px,3vw,42px);border-bottom:1px solid rgba(200,196,224,.08);background:linear-gradient(#05060dbf,#05060d00);backdrop-filter:blur(8px)}
+body.astro-mode .logo{display:grid;place-items:center;width:41px;height:41px;border-radius:50%;background:linear-gradient(135deg,#ffe099,#ff932f);box-shadow:0 0 24px #ffa43a55;color:#24130a;font-size:12px;letter-spacing:-1px}
+body.astro-mode .logo span{color:#24130a!important}
+body.astro-mode .astro-brand-label{display:grid;gap:2px;margin-left:10px;color:#e8e7ef;font:600 12px system-ui,-apple-system,"Segoe UI",sans-serif}
+body.astro-mode .astro-brand-label small{color:#8a8aa0;font:8px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.09em}
+body.astro-mode .site-header .nav,body.astro-mode .site-header .header-cta,body.astro-mode .site-header .menu-toggle{display:none}
+body.astro-mode .astro-language{display:inline-flex;gap:2px;margin-left:auto;padding:3px;border:1px solid #383849;border-radius:999px;background:#0a0b16d4}
+body.astro-mode .astro-language button{padding:7px 9px;border:0;border-radius:999px;background:none;color:#9a99ad;font:10px ui-monospace,"Cascadia Code",Consolas,monospace;cursor:pointer}
+body.astro-mode .astro-language button[aria-pressed="true"]{background:#eeeaf0;color:#1d1c26}
+body.astro-mode .mode-switch{margin-left:8px;border-color:#383849;background:rgba(10,11,22,.83)}
+body.astro-mode .mode-switch button{color:#b7b4c8}
+body.astro-mode .mode-switch button[aria-pressed="true"]{background:#f1edf4;color:#1e1c29;box-shadow:0 0 14px #fff4}
+.astro-view{position:fixed;inset:0;z-index:10;overflow:hidden;background:radial-gradient(circle at 75% 40%,#19101d 0,#080811 45%,#04050b 100%);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#ecebf4}
+.astro-scene{position:absolute;inset:0;touch-action:none;cursor:grab}
+.astro-scene.is-dragging{cursor:grabbing}
+.astro-orbits,.astro-planets{position:absolute;inset:0;width:100%;height:100%}
+.astro-planets{pointer-events:none}
+.astro-readout{position:absolute;right:clamp(20px,3vw,42px);top:85px;z-index:12;color:#9290a7;font:10px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.12em}
+.astro-planet{position:absolute;z-index:2;display:grid;justify-items:center;gap:7px;min-width:62px;padding:10px 4px;border:0;background:none;color:#aaa9bc;transform:translate(-50%,-50%);pointer-events:auto;cursor:pointer;transition:filter .25s,color .25s}
+.astro-planet:hover,.astro-planet.is-active{color:#ffd29a;filter:brightness(1.25)}
+.astro-planet-label{order:-1;padding:3px 7px;border:1px solid transparent;border-radius:999px;background:#080914a8;font:10px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.astro-planet:hover .astro-planet-label,.astro-planet.is-active .astro-planet-label{border-color:#e9a85f88}
+.astro-planet-sphere{display:block;width:var(--planet-size,22px);height:var(--planet-size,22px);border-radius:50%;box-shadow:inset -7px -4px 9px #0007,0 0 15px #aab4ff33}
+.astro-body-sun .astro-planet-sphere{background:radial-gradient(circle at 35% 28%,#fff0ac,#ffba55 38%,#f37027 78%,#ab351d);box-shadow:0 0 18px #ffaf56,0 0 80px #fb7d2d77,0 0 140px #e25a2144}
+.astro-body-mercury .astro-planet-sphere{background:radial-gradient(circle at 25% 25%,#d5c8b8,#807a7c 67%,#333343)}
+.astro-body-venus .astro-planet-sphere{background:radial-gradient(circle at 30% 25%,#ffe2ab,#c48b66 58%,#634b48)}
+.astro-body-earth .astro-planet-sphere{background:radial-gradient(circle at 30% 25%,#9be9db,#4a9fbe 33%,#20647e 55%,#3f7978 74%,#16293a)}
+.astro-body-mars .astro-planet-sphere{background:radial-gradient(circle at 30% 25%,#ffc08a,#bc633f 50%,#713326)}
+.astro-body-jupiter .astro-planet-sphere{background:repeating-linear-gradient(165deg,#e6b586 0 5px,#c99065 6px 9px,#e9c8a7 10px 14px,#9b6f57 15px 18px)}
+.astro-body-saturn .astro-planet-sphere{position:relative;background:radial-gradient(circle at 30% 25%,#e4d8a7,#a69871 64%,#625d59)}
+.astro-body-saturn .astro-planet-sphere:after{content:"";position:absolute;inset:30% -45%;border:5px solid #d8c7a48c;border-radius:50%;transform:rotate(-20deg)}
+.astro-body-uranus .astro-planet-sphere{background:radial-gradient(circle at 30% 25%,#c9f6f3,#78bfc7 60%,#327685)}
+.astro-body-neptune .astro-planet-sphere{background:radial-gradient(circle at 30% 25%,#9bb6ff,#4178d0 58%,#1c347b)}
+.astro-probe{position:absolute;z-index:2;top:69%;right:4%;display:grid;justify-items:center;gap:3px;padding:8px;border:0;background:none;color:#a9c5e8;pointer-events:auto;cursor:pointer;filter:drop-shadow(0 0 9px #9dc5ee88)}
+.astro-probe span{font-size:24px;line-height:1}.astro-probe small{font:8px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.15em}
+.astro-probe:hover{color:#fff}
+.astro-intro{position:absolute;left:clamp(32px,5vw,76px);top:15vh;z-index:4;width:min(40vw,485px);transition:opacity .4s,transform .4s}
+.astro-view.is-focused .astro-intro{opacity:.26;transform:translateX(-18px);pointer-events:none}
+.astro-status{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:7px 13px;border:1px solid #303142;border-radius:999px;background:#0d0e1abf;color:#b7b6c7;font:10px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.06em}
+.astro-status span{width:8px;height:8px;border-radius:50%;background:#4ee6a0;box-shadow:0 0 10px #4ee6a0}
+.astro-intro h1{margin:0;font-size:clamp(55px,6.5vw,95px);font-weight:750;letter-spacing:-.07em;line-height:.92}
+.astro-intro h1 span{display:block;width:max-content;max-width:100%;background:linear-gradient(105deg,#ffe5a4,#ffac55 52%,#fb672f);background-clip:text;-webkit-background-clip:text;color:transparent}
+.astro-role{margin:25px 0 17px;color:#83d7fa;font:11px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.14em;text-transform:uppercase}
+.astro-lead{max-width:455px;margin:0;color:#aeb0c1;font-size:15px;line-height:1.75}
+.astro-actions{display:flex;align-items:center;gap:11px;margin-top:29px}
+.astro-action-primary,.astro-action-secondary{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:47px;padding:12px 18px;border-radius:999px;font:600 12px system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;cursor:pointer}
+.astro-action-primary{border:0;background:linear-gradient(110deg,#ffe2a0,#ff8d3b);color:#23150b;box-shadow:0 7px 27px #f9753d55}
+.astro-action-secondary{border:1px solid #3a394d;background:#0d0e1bbf;color:#edeaf0}
+.astro-stats{display:flex;gap:40px;margin-top:36px;padding-top:22px;border-top:1px solid #55546a55}
+.astro-stats div{display:grid;gap:5px}
+.astro-stats strong{font-size:23px;letter-spacing:-.05em}
+.astro-stats span{color:#7e819b;font:9px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.11em;text-transform:uppercase}
+.astro-hint{position:absolute;left:50%;bottom:91px;z-index:3;transform:translateX(-50%);margin:0;color:#7e809b;font:9px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.17em;text-align:center;text-transform:uppercase;white-space:nowrap}
+.astro-dock{position:absolute;bottom:18px;left:50%;z-index:12;display:flex;align-items:center;gap:3px;max-width:calc(100% - 32px);padding:5px;border:1px solid #343447;border-radius:999px;background:#0e101dd9;box-shadow:0 15px 48px #0008;transform:translateX(-50%);overflow-x:auto;scrollbar-width:none}
+.astro-dock::-webkit-scrollbar{display:none}
+.astro-dock button{flex:none;padding:9px 12px;border:0;border-radius:999px;background:transparent;color:#aaaab9;font:11px system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;cursor:pointer}
+.astro-dock button small{margin-right:5px;color:#777a93;font:9px ui-monospace,"Cascadia Code",Consolas,monospace}
+.astro-dock button:hover{color:#fff}
+.astro-dock button.is-active{background:#f3eff3;color:#171722}
+.astro-dock button.is-active small{color:#826342}
+.astro-panel{position:absolute;top:86px;right:clamp(17px,3vw,45px);bottom:80px;z-index:9;display:flex;flex-direction:column;width:clamp(430px,40vw,610px);border:1px solid #3a3545;border-radius:22px;background:linear-gradient(160deg,#11111feD,#090b16f2);box-shadow:0 28px 75px #000a,inset 0 1px #ffffff18;backdrop-filter:blur(20px);transform:translateX(calc(100% + 70px));opacity:0;visibility:hidden;pointer-events:none;transition:transform .45s ease,opacity .35s ease,visibility .35s}
+.astro-view.is-focused .astro-panel{transform:translateX(0);opacity:1;visibility:visible;pointer-events:auto}
+.astro-panel-header{display:flex;align-items:flex-start;justify-content:space-between;padding:24px 27px 13px}
+.astro-panel-header>div{display:grid;gap:6px}
+.astro-panel-orbit,.astro-panel-body{font:10px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.13em;text-transform:uppercase}
+.astro-panel-orbit{color:#ffc07a}.astro-panel-body{color:#777e95}
+.astro-panel-close{width:34px;height:34px;border:1px solid #454354;border-radius:50%;background:#151523;color:#d6d6e2;cursor:pointer}
+.astro-panel>h2{margin:0;padding:0 27px 23px;border-bottom:1px solid #39384880;font-size:clamp(32px,3.5vw,48px);letter-spacing:-.05em}
+.astro-panel-content{flex:1;min-height:0;padding:23px 27px;overflow:auto;scrollbar-color:#58536d transparent}
+.astro-panel-content>p,.astro-panel-content .astro-card p{color:#b4b6c6;font-size:14px;line-height:1.7}
+.astro-panel-content>p:first-child{margin-top:0}
+.astro-card{margin:19px 0;padding:19px;border:1px solid #3a3c4e;border-radius:14px;background:#171827aa}
+.astro-card small{color:#ffbc79;font:10px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.1em;text-transform:uppercase}
+.astro-card h3{margin:8px 0;font-size:22px;letter-spacing:-.03em}
+.astro-card p{margin:8px 0 14px}
+.astro-card img{display:block;width:100%;max-height:230px;object-fit:cover;border-radius:9px;margin:12px 0}
+.astro-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.astro-tags span{padding:6px 9px;border:1px solid #46506b;border-radius:999px;color:#b9dff4;font-size:10px}
+.astro-panel-content a{color:#a4dcff;text-underline-offset:4px}
+.astro-project-link{margin-top:7px;padding:8px 12px;border:1px solid #a57957;border-radius:999px;background:#2b201c;color:#ffd6a3;font:11px system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}
+.astro-project-link:hover{background:#463020}
+.astro-link-list{display:grid;gap:0}
+.astro-link-list a{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid #343649;color:#dbe3f3;text-decoration:none;font-size:13px}
+.astro-link-list a:hover{color:#ffcb92}
+.astro-contact-form{display:grid;gap:13px;margin-top:26px;padding-top:20px;border-top:1px solid #343649}
+.astro-contact-form label{display:grid;gap:7px;color:#a9a9bd;font:10px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.09em;text-transform:uppercase}
+.astro-contact-form input,.astro-contact-form textarea{width:100%;padding:11px 12px;border:1px solid #45465d;border-radius:9px;background:#10111e;color:#eef0fa;font:13px system-ui,-apple-system,"Segoe UI",sans-serif;resize:vertical}
+.astro-contact-form input:focus,.astro-contact-form textarea:focus{outline:2px solid #ffc174;outline-offset:1px}
+.astro-contact-form button{justify-self:start}
+.astro-legal-links{display:flex;gap:18px;margin-top:24px;padding-top:14px;border-top:1px solid #343649;font-size:11px}
+.astro-panel-footer{display:flex;justify-content:space-between;padding:15px 22px;border-top:1px solid #39384880}
+.astro-panel-footer button{padding:9px 13px;border:1px solid #3f3d50;border-radius:999px;background:#121320;color:#e5e4ee;font:11px system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}
+.astro-panel-footer button:hover{border-color:#efb774;color:#ffd19b}
+.astro-standby[hidden]{display:none}
+.astro-standby{position:absolute;inset:0;z-index:20;display:grid;place-items:center;padding:25px;background:#03050cee;backdrop-filter:blur(8px)}
+.astro-standby-card{width:min(100%,560px);padding:42px;border:1px solid #454259;border-radius:20px;background:radial-gradient(circle at 50% 0,#222343,#0b0d1a 70%);box-shadow:0 20px 80px #0009;text-align:center}
+.astro-standby-meta{margin:0 0 28px;color:#9eb9dd;font:10px ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.2em}
+.astro-signal-bars{display:flex;align-items:center;justify-content:center;gap:7px;height:56px}
+.astro-signal-bars i{width:5px;height:14px;border-radius:6px;background:#ffbd73;box-shadow:0 0 12px #ffad5c99;animation:astro-signal 1.3s ease-in-out infinite alternate}
+.astro-signal-bars i:nth-child(2),.astro-signal-bars i:nth-child(6){animation-delay:.2s}.astro-signal-bars i:nth-child(3),.astro-signal-bars i:nth-child(5){animation-delay:.4s}.astro-signal-bars i:nth-child(4){animation-delay:.6s}
+.astro-standby-card h2{margin:19px 0 8px;font-size:clamp(30px,5vw,48px);letter-spacing:-.05em}.astro-standby-note{color:#aeb2c7;font-size:14px}
+.astro-standby-card button{margin-top:25px;padding:11px 18px;border:1px solid #656075;border-radius:999px;background:#151626;color:#eef0f5;cursor:pointer}
+@keyframes astro-signal{to{height:50px;background:#8fcfff}}
+body.astro-mode .consent-banner{z-index:40}
+@media(max-width:900px){.astro-intro{width:min(46vw,420px)}.astro-intro h1{font-size:clamp(52px,7vw,72px)}.astro-panel{width:min(53vw,520px)}.astro-dock button{padding:9px 10px}}
+@media(max-width:700px){body.astro-mode .site-header{height:64px}body.astro-mode .astro-brand-label{display:none}.astro-readout{display:none}.astro-intro{left:22px;top:83px;width:calc(100% - 44px)}.astro-intro h2{font-size:clamp(47px,10vw,64px)}.astro-role{font-size:9px;line-height:1.5;margin:18px 0 10px}.astro-lead{max-width:340px;font-size:12px;line-height:1.55}.astro-status{margin-bottom:16px}.astro-actions{margin-top:18px;gap:8px}.astro-action-primary,.astro-action-secondary{min-height:40px;padding:9px 12px;font-size:10px}.astro-stats{margin-top:18px;padding-top:12px;gap:26px}.astro-stats strong{font-size:19px}.astro-hint{bottom:76px;width:90%;white-space:normal;font-size:8px;line-height:1.5}.astro-dock{bottom:10px;left:10px;max-width:calc(100% - 20px);width:calc(100% - 20px);transform:none}.astro-panel{top:auto;right:10px;bottom:67px;left:10px;width:auto;height:min(66svh,600px);border-radius:19px;transform:translateY(calc(100% + 100px))}.astro-view.is-focused .astro-panel{transform:translateY(0)}.astro-panel-header{padding:16px 19px 8px}.astro-panel>h2{padding:0 19px 14px;font-size:31px}.astro-panel-content{padding:17px 19px}.astro-panel-footer{padding:10px 14px}}
+@media(max-width:420px){.astro-intro h2{font-size:47px}.astro-lead{max-width:290px}.astro-action-secondary{padding:9px 10px}.astro-stats{display:none}}
+@media(max-width:700px){.astro-intro h1{font-size:clamp(47px,10vw,64px)}.astro-planet-label{display:none}.astro-planet:nth-child(1) .astro-planet-label,.astro-planet:nth-child(4) .astro-planet-label,.astro-planet:nth-child(6) .astro-planet-label,.astro-planet.is-active .astro-planet-label{display:block}}
+@media(max-width:420px){.astro-intro h1{font-size:47px}}
+@media(prefers-reduced-motion:reduce){.astro-panel,.astro-intro,.mode-switch button{transition:none}.astro-signal-bars i{animation:none}}
