@@ -23,6 +23,7 @@ const publicFiles = new Set([
   'termos.html',
   'robots.txt',
   'app.css',
+  'feed-project.css',
   'astro-mode.css',
   'script.js',
   'astro-mode.js',

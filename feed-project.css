@@ -13,3 +13,19 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
+
+/* Let the feed's background run edge to edge while its contents stay aligned. */
+.social-feed {
+  width: 100%;
+  max-width: none;
+  margin: 82px 0 0;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
+@media (max-width: 760px) {
+  .social-feed {
+    margin-top: 50px;
+  }
+}
