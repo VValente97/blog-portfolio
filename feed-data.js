@@ -17,4 +17,12 @@ window.blogFeedPosts = [
     image: 'assets/acai-na-cuia-thumbnail.png',
     imageAlt: 'Miniatura do projeto Açaí na Cuia em notebook e celular',
   },
+  {
+    category: 'Hoje · Projeto pessoal',
+    title: 'Norte Apostilas',
+    description: 'Um site para apresentar materiais de estudo para concursos com mais direção: do edital à prática e à revisão.',
+    action: 'visitar site →',
+    url: 'https://norte-apostilas.pages.dev/',
+    preview: 'norte',
+  },
 ];

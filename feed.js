@@ -48,6 +48,39 @@
     return preview;
   };
 
+  const createNortePreview = () => {
+    const preview = createElement('div', 'norte-post-preview');
+    preview.setAttribute('role', 'img');
+    preview.setAttribute('aria-label', 'Prévia do site Norte Apostilas, com foco em estudos para concursos públicos');
+
+    const topbar = createElement('div', 'norte-preview-topbar');
+    topbar.append(createElement('span', 'norte-preview-brand', 'NORTE'), createElement('span', 'norte-preview-nav', 'MATERIAIS　 MÉTODO　 SOBRE'));
+
+    const body = createElement('div', 'norte-preview-body');
+    const copy = createElement('div', 'norte-preview-copy');
+    copy.append(
+      createElement('span', 'norte-preview-eyebrow', 'APOSTILAS PARA CONCURSOS'),
+      createElement('strong', '', 'O edital é grande. Seu caminho pode ter direção.'),
+      createElement('span', 'norte-preview-link', 'Conheça a vitrine　↗'),
+    );
+
+    const guide = createElement('div', 'norte-preview-guide');
+    guide.append(
+      createElement('span', 'norte-guide-kicker', 'GUIA DE ESTUDOS'),
+      createElement('strong', '', 'Seu próximo passo começa por aqui.'),
+      createElement('span', 'norte-guide-lines', '━━━━━━━\n━━━━━━━━━━\n━━━━━━'),
+      createElement('span', 'norte-guide-mark', 'N'),
+    );
+
+    const steps = createElement('div', 'norte-preview-steps');
+    ['01  O alvo', '02  O caminho', '03  A prática'].forEach((label) => {
+      steps.append(createElement('span', '', label));
+    });
+    body.append(copy, guide);
+    preview.append(topbar, body, steps);
+    return preview;
+  };
+
   const createPost = (post) => {
     const article = createElement('article', 'social-post social-post-featured');
     const header = createElement('header');
@@ -63,10 +96,19 @@
     content.append(createElement('h3', '', post.title));
     if (post.preview === 'blog') content.append(createBlogPreview());
     if (post.preview === 'image' && post.image) content.append(createImagePreview(post));
+    if (post.preview === 'norte') content.append(createNortePreview());
     content.append(createElement('p', '', post.description));
 
     const footer = createElement('footer');
-    footer.append(createElement('span', '', '♡ 0'), createElement('span', '', '↗ compartilhar'), createElement('span', '', post.action));
+    if (post.url) {
+      const action = createElement('a', '', post.action);
+      action.href = post.url;
+      action.target = '_blank';
+      action.rel = 'noopener noreferrer';
+      footer.append(action);
+    } else {
+      footer.append(createElement('span', '', post.action));
+    }
     article.append(header, content, footer);
     return article;
   };

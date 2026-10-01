@@ -14,6 +14,156 @@
   object-fit: cover;
 }
 
+.norte-post-preview {
+  position: relative;
+  min-height: 280px;
+  margin: 17px 0 16px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 169, 106, .38);
+  border-radius: 12px;
+  color: #f4f7f7;
+  background: #09252e;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .08);
+  font-family: Montserrat, system-ui, sans-serif;
+}
+
+.norte-preview-topbar {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(231, 204, 160, .18);
+  background: rgba(255, 255, 255, .035);
+}
+
+.norte-preview-brand {
+  color: #e7cca0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.norte-preview-nav {
+  color: #c4d2d2;
+  font-size: 8px;
+  letter-spacing: .8px;
+}
+
+.norte-preview-body {
+  display: grid;
+  min-height: 190px;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 28px 16px;
+  background: radial-gradient(ellipse at 80% 55%, rgba(201, 169, 106, .13), transparent 40%);
+}
+
+.norte-preview-copy {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+}
+
+.norte-preview-eyebrow,
+.norte-guide-kicker {
+  color: #c9a96a;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.norte-preview-copy strong {
+  max-width: 440px;
+  color: #f4f7f7;
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -1px;
+}
+
+.norte-preview-link {
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(201, 169, 106, .7);
+  color: #e7cca0;
+  font-size: 9px;
+}
+
+.norte-preview-guide {
+  position: relative;
+  display: grid;
+  min-height: 148px;
+  align-content: start;
+  gap: 11px;
+  overflow: hidden;
+  padding: 17px 15px;
+  border: 1px solid rgba(231, 204, 160, .35);
+  border-radius: 5px;
+  background: linear-gradient(150deg, #174550, #0c3038 68%, #8b6943);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, .28);
+  transform: rotate(3deg);
+}
+
+.norte-preview-guide strong {
+  max-width: 105px;
+  font: 600 13px/1.25 Georgia, serif;
+}
+
+.norte-guide-lines {
+  color: rgba(231, 204, 160, .58);
+  font-size: 6px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+.norte-guide-mark {
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
+  color: rgba(231, 204, 160, .18);
+  font: 700 64px/1 Georgia, serif;
+}
+
+.norte-preview-steps {
+  display: flex;
+  gap: 8px;
+  padding: 0 28px 18px;
+}
+
+.norte-preview-steps span {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid rgba(231, 204, 160, .16);
+  border-radius: 4px;
+  color: #e7cca0;
+  background: rgba(255, 255, 255, .035);
+  font-size: 8px;
+  letter-spacing: .4px;
+}
+
+.social-post footer a {
+  margin-left: auto;
+  color: #72d7ff;
+  text-decoration: none;
+}
+
+.social-post footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  .norte-post-preview { min-height: 250px; }
+  .norte-preview-topbar { padding: 0 14px; }
+  .norte-preview-nav { font-size: 7px; }
+  .norte-preview-body { grid-template-columns: minmax(0, 1fr) 112px; gap: 12px; padding: 20px 16px 14px; }
+  .norte-preview-guide { min-height: 132px; padding: 14px 11px; }
+  .norte-preview-guide strong { font-size: 11px; }
+  .norte-preview-steps { gap: 5px; padding: 0 12px 14px; }
+  .norte-preview-steps span { padding: 9px 6px; font-size: 7px; }
+}
+
 /* Let the feed's background run edge to edge while its contents stay aligned. */
 .social-feed {
   width: 100%;
