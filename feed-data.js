@@ -1,4 +1,5 @@
-// Para adicionar uma publicação, inclua outro objeto nesta lista.
+// Para adicionar uma publicação, inclua outro objeto no final desta lista.
+// O feed exibe as publicações mais recentes primeiro.
 // O restante do blog não precisa ser alterado.
 window.blogFeedPosts = [
   {

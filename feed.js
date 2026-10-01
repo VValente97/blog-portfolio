@@ -113,7 +113,7 @@
     return article;
   };
 
-  posts.forEach((post) => feedRoot.append(createPost(post)));
+  posts.slice().reverse().forEach((post) => feedRoot.append(createPost(post)));
 
   const count = String(posts.length).padStart(2, '0');
   document.querySelector('[data-feed-count]')?.replaceChildren(document.createTextNode(count));
