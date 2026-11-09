@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://blog-portfolio-a8w.pages.dev/sitemap.xml
+Sitemap: https://joaovitorvalente.pages.dev/sitemap.xml
