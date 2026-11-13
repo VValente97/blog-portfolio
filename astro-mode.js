@@ -35,6 +35,42 @@
     values.forEach((value) => row.append(make('span', '', value)));
     return row;
   };
+  const renderProjects = (language) => {
+    const english = language === 'en';
+    const posts = Array.isArray(window.blogFeedPosts) ? window.blogFeedPosts.slice().reverse() : [];
+    panelContent.append(paragraph(english
+      ? 'Personal projects, studies and work in progress from my portfolio feed.'
+      : 'Projetos pessoais, estudos e entregas reunidos no feed do portfólio.'));
+    posts.forEach((post, index) => {
+      const category = english ? post.categoryEn || post.category : post.category;
+      const title = english ? post.titleEn || post.title : post.title;
+      const description = english ? post.descriptionEn || post.description : post.description;
+      const node = card(`${String(index + 1).padStart(2, '0')} · ${category}`, title, description);
+      if (post.image) {
+        const image = make('img');
+        image.src = post.image;
+        image.alt = english ? post.imageAltEn || post.imageAlt || title : post.imageAlt || title;
+        image.loading = 'lazy';
+        node.insertBefore(image, node.querySelector('p'));
+      }
+      if (post.url) {
+        const link = make('a', 'astro-project-link', english ? 'Visit site ↗' : 'Visitar site ↗');
+        link.href = post.url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        node.append(link);
+      } else {
+        const link = make('button', 'astro-project-link', english ? 'View in the feed →' : 'Ver no feed →');
+        link.type = 'button';
+        link.addEventListener('click', () => {
+          setMode('normal', true);
+          location.hash = post.id ? `#${post.id}` : '#projetos';
+        });
+        node.append(link);
+      }
+      panelContent.append(node);
+    });
+  };
   const contactForm = (language) => {
     const english = language === 'en';
     const form = make('form', 'astro-contact-form');
@@ -97,25 +133,7 @@
       panelContent.append(card('03 · Infraestrutura', 'Nuvem e automação', 'Soluções em AWS e automação de processos para ampliar funcionalidades.'));
     } },
     { id: 'projetos', name: 'Projetos', body: 'Terra · ideias em construção', planet: 'earth', size: 29, phase: .75, render() {
-      panelContent.append(paragraph('Projetos pessoais, estudos e entregas reunidos no feed do portfólio.'));
-      (window.blogFeedPosts || []).forEach((post, index) => {
-        const node = card(`${String(index + 1).padStart(2, '0')} · ${post.category}`, post.title, post.description);
-        if (post.image) {
-          const image = make('img');
-          image.src = post.image;
-          image.alt = post.imageAlt || post.title;
-          image.loading = 'lazy';
-          node.insertBefore(image, node.querySelector('p'));
-        }
-        const link = make('button', 'astro-project-link', 'Ver no feed →');
-        link.type = 'button';
-        link.addEventListener('click', () => {
-          setMode('normal', true);
-          location.hash = '#projetos';
-        });
-        node.append(link);
-        panelContent.append(node);
-      });
+      renderProjects('pt');
     } },
     { id: 'notas', name: 'Notas', body: 'Marte · sinais em andamento', planet: 'mars', size: 21, phase: 2.5, render() {
       panelContent.append(card('Diário de construção', text('.newsletter h2'), text('.newsletter .contact-window-body > div > p:not(.eyebrow)')));
@@ -216,24 +234,7 @@
       panelContent.append(card('03 · Infrastructure', 'Cloud and automation', 'AWS solutions and process automation to extend product capabilities.'));
     }
     if (index === 3) {
-      panelContent.append(paragraph('Personal projects, studies and work in progress from my portfolio feed.'));
-      (window.blogFeedPosts || []).forEach((post, projectIndex) => {
-        const title = projectIndex === 0 ? 'My first project: this blog' : post.title;
-        const description = projectIndex === 0 ? 'This is my blog and the first project I have written about here.' : post.title === 'Açaí na Cuia' ? 'A website designed to connect a small business with more customers and expand its sales reach.' : post.description;
-        const node = card(`${String(projectIndex + 1).padStart(2, '0')} · Personal project`, title, description);
-        if (post.image) {
-          const image = make('img');
-          image.src = post.image;
-          image.alt = post.imageAlt || post.title;
-          image.loading = 'lazy';
-          node.insertBefore(image, node.querySelector('p'));
-        }
-        const link = make('button', 'astro-project-link', 'View in the feed →');
-        link.type = 'button';
-        link.addEventListener('click', () => { setMode('normal', true); location.hash = '#projetos'; });
-        node.append(link);
-        panelContent.append(node);
-      });
+      renderProjects('en');
     }
     if (index === 4) {
       panelContent.append(card('Building notes', 'Building the next step.', 'New projects, lessons and solutions are always in motion. This space will soon bring together what I am creating next.'));

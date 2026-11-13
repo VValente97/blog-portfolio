@@ -103,6 +103,7 @@
 
   const createPost = (post) => {
     const article = createElement('article', 'social-post social-post-featured');
+    if (post.id) article.id = post.id;
     const header = createElement('header');
     const avatar = createElement('div', 'post-avatar', 'JV');
     const author = createElement('div');
