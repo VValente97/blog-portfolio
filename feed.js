@@ -81,6 +81,26 @@
     return preview;
   };
 
+  const createVetPreview = () => {
+    const preview = createElement('div', 'vet-post-preview');
+    preview.setAttribute('role', 'img');
+    preview.setAttribute('aria-label', 'Prévia ilustrada do site da Dra. Naiane Moreira, médica veterinária');
+
+    const topbar = createElement('div', 'vet-preview-topbar');
+    topbar.append(createElement('strong', '', 'NM'), createElement('span', '', 'Dra. Naiane Moreira'));
+
+    const body = createElement('div', 'vet-preview-body');
+    const copy = createElement('div', 'vet-preview-copy');
+    copy.append(
+      createElement('span', 'vet-preview-eyebrow', 'MEDICINA VETERINÁRIA COM CARINHO'),
+      createElement('strong', '', 'O cuidado que seu pet merece.'),
+      createElement('span', 'vet-preview-cta', 'Conheça os atendimentos ↗'),
+    );
+    body.append(copy, createElement('span', 'vet-preview-mark', '♡'));
+    preview.append(topbar, body);
+    return preview;
+  };
+
   const createPost = (post) => {
     const article = createElement('article', 'social-post social-post-featured');
     const header = createElement('header');
@@ -97,6 +117,7 @@
     if (post.preview === 'blog') content.append(createBlogPreview());
     if (post.preview === 'image' && post.image) content.append(createImagePreview(post));
     if (post.preview === 'norte') content.append(createNortePreview());
+    if (post.preview === 'vet') content.append(createVetPreview());
     content.append(createElement('p', '', post.description));
 
     const footer = createElement('footer');
