@@ -25,6 +25,7 @@ const publicFiles = new Set([
   'app.css',
   'feed-project.css',
   'astro-mode.css',
+  'ocean-theme.css',
   'script.js',
   'astro-mode.js',
   'feed-data.js',

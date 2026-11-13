@@ -1,0 +1,219 @@
+/* Midnight indigo palette based on #000036. */
+:root {
+  --ink: #f0f1ff;
+  --cream: #000036;
+  --orange: #a3b2ff;
+  --blue: #101052;
+  --green: #19195d;
+  --line: #343474;
+  --ocean-abyss: #000036;
+  --ocean-surface: #0b0b48;
+  --ocean-raised: #17175c;
+  --ocean-edge: #424286;
+  --ocean-accent: #a3b2ff;
+  --ocean-muted: #b8bbdf;
+}
+
+body,
+body.legal-page {
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 82% 0%, #12134a 0, transparent 36%),
+    radial-gradient(ellipse at 8% 72%, #0c0c3a 0, transparent 42%),
+    var(--ocean-abyss);
+}
+
+.site-header { border-bottom-color: var(--line); }
+.menu-toggle { color: var(--ocean-accent); }
+.logo span,
+.hero h1 em,
+.experience-company { color: var(--ocean-accent) !important; }
+.eyebrow,
+.card-meta,
+.experience-date,
+.footer { color: #8e90c0; }
+.nav a:hover,
+.topic-list a:hover { color: #b9bbea; }
+.header-cta,
+.text-link,
+.read-link { border-color: #4a4c8e; }
+
+.mode-switch { border-color: var(--ocean-edge); background: #0b0c31; }
+.mode-switch button { color: #a9aace; }
+.mode-switch button[aria-pressed="true"] {
+  color: #eeeef9;
+  background: #272963;
+  box-shadow: inset 0 1px #b6baee24;
+}
+
+.hero-art,
+.hero-art:has(.hero-windows) {
+  border: 1px solid #2c2e63;
+  background:
+    radial-gradient(circle at 75% 22%, #1f216c 0, transparent 39%),
+    linear-gradient(145deg, #0d0d34, #080823 70%);
+  box-shadow: 0 28px 70px #0007, inset 0 1px #abafe916;
+}
+.profile-box,
+.hero-windows .profile-box {
+  border-color: #2d2e5a;
+  background: linear-gradient(155deg, #1b1b4c, #0d0d30 76%);
+  box-shadow: 0 22px 50px #0008, inset 0 1px #b7baeb1c;
+}
+body .tech-box {
+  border-color: #2c2d5a !important;
+  background: linear-gradient(145deg, #131448, #0d0d30) !important;
+  box-shadow: 0 20px 45px #0007, inset 0 1px #b7baeb18 !important;
+}
+.profile-role,
+.tech-label,
+.tech-icon b,
+.blog-preview-card span,
+.blog-preview-copy em { color: var(--ocean-accent); }
+.tech-icon b {
+  border-color: #45458e;
+  background: linear-gradient(145deg, #1c1c66, #0b0b46);
+  box-shadow: 0 0 18px #7684e533;
+}
+.profile-state i,
+.feed-live i { background: var(--ocean-accent); box-shadow: 0 0 9px #a3b2ff66; }
+.social-avatar,
+.post-avatar { background: linear-gradient(135deg, #a3b2ff, #5d66bc); color: #08083e; }
+.button-dark,
+.consent-primary { color: #f2f2fc; background: #2c2e6f; }
+.button-dark:hover,
+.consent-primary:hover { background: #3a3d88; }
+.topics,
+.about,
+.experience,
+.certificates,
+.diploma { border-color: var(--line); }
+.topic-list a,
+.certificate-list a { color: #e0e1f1; }
+.tech-tags span,
+.diploma-mark { border-color: #343565; color: #afb1de; }
+.about-copy > p,
+.experience-item p,
+.diploma p:not(.eyebrow) { color: var(--ocean-muted); }
+
+.social-feed {
+  border-color: #2b2c64;
+  background: linear-gradient(145deg, #0e0f36, #0b0b2c 72%);
+}
+.social-sidebar {
+  border-color: #2a2c58;
+  background: #10113b;
+}
+.social-post {
+  border-color: #2f3060;
+  background: linear-gradient(155deg, #161746, #10103a);
+  box-shadow: inset 0 1px #bcbfed0c;
+}
+.social-post:hover { border-color: #4e508d; }
+.social-post footer { border-color: #30315f; }
+.social-post footer a,
+.social-post footer span:last-child,
+.social-sidebar > span { color: #9da0de; }
+.social-post p,
+.post-content p,
+.social-sidebar p { color: var(--ocean-muted); }
+.blog-post-preview {
+  border-color: #2e2f5e;
+  background: radial-gradient(circle at 77% 17%, #23256c55, transparent 36%), #0d0e36;
+}
+.project-post-preview { border-color: #2e2f5e; }
+.blog-preview-card { border-color: #303265; background: linear-gradient(145deg, #1b1c57, #0d0d33); }
+
+.newsletter,
+.contact-window {
+  border-color: #2c2d5b;
+  background: linear-gradient(145deg, #18194d, #0d0d31 72%);
+  box-shadow: 0 24px 60px #0007;
+}
+.contact-window p:not(.eyebrow),
+.newsletter p:not(.eyebrow) { color: var(--ocean-muted); }
+.contact-links .copy-email,
+.contact-links a:last-of-type { border-color: #2c2d5b; }
+.contact-links .copy-email b,
+.copy-status { color: #9fa2df; }
+.consent-banner { border-color: #343562; background: #0e0f34f5; }
+.consent-banner p { color: #afb0d2; }
+.consent-banner a { color: #a7aae0; }
+.consent-secondary { border-color: #424375; color: #dddeee; }
+.legal-content a { color: #a7aae0; }
+
+body.astro-mode { color: var(--ink); background: #000036; }
+.astro-view {
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 70% 47%, #19195e 0, #0b0b47 37%, #000036 78%),
+    #000036;
+}
+.astro-view::before { opacity: .12; }
+body.astro-mode .site-header {
+  border-bottom-color: #2a2c65;
+  background: linear-gradient(180deg, #060621f7, #0b0c31d9);
+}
+body.astro-mode .logo {
+  border-color: #4e508e;
+  background: linear-gradient(145deg, #232467, #0d0e3a);
+  box-shadow: 0 0 20px #42469f3d;
+}
+body.astro-mode .logo span { color: var(--ocean-accent) !important; }
+body.astro-mode .mode-switch,
+body.astro-mode .astro-language { border-color: #343562; background: #0d0d34e8; }
+body.astro-mode .mode-switch button[aria-pressed="true"],
+body.astro-mode .astro-language button[aria-pressed="true"] {
+  color: #f1f1fb;
+  background: #2c2e6f;
+}
+.astro-status { border-color: #2f305d; background: #121345d9; }
+.astro-status span { background: var(--ocean-accent); box-shadow: 0 0 8px #a3b2ff88; }
+.astro-intro { border-left-color: #5b5ea677; }
+.astro-intro h1 span {
+  background: linear-gradient(100deg, #f2f2fb, #aaade1 55%, #696bae);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.astro-role,
+.astro-panel-orbit,
+.astro-card small { color: #9ea1db; }
+.astro-lead,
+.astro-panel-content > p,
+.astro-panel-content .astro-card p { color: #abacd0; }
+.astro-action-primary { color: #f3f4fc; background: #303376; box-shadow: 0 8px 25px #23266b33; }
+.astro-action-primary:hover { background: #3e428d; }
+.astro-action-secondary { border-color: #383969; background: #121345dd; }
+.astro-dock { border-color: #343561; background: #0d0e36f2; box-shadow: 0 22px 55px #000a; }
+.astro-dock button.is-active { color: #f3f4fc; background: #303376; }
+.astro-dock button.is-active small { color: #c4c6eb; }
+.astro-panel {
+  border-color: #343564;
+  background: linear-gradient(150deg, #151648f7, #0b0c30fa);
+  box-shadow: 0 30px 80px #000c, inset 0 1px #bfc1ed12;
+}
+.astro-panel-header,
+.astro-panel > h2,
+.astro-panel-footer { border-color: #34356180; }
+.astro-panel-content { scrollbar-color: #5656aa transparent; }
+.astro-panel-content a { color: #a3b2ff; }
+.astro-card { border-color: #343563; background: #1b1c5699; }
+.astro-project-link { border-color: #50538f; background: #23256c; color: #d9dbf2; }
+.astro-panel-content a.astro-project-link { color: #d9dbf2; }
+.astro-project-link:hover { background: #252767; }
+.astro-panel-close,
+.astro-panel-footer button { border-color: #414374; background: #1b1d57; }
+.astro-planet-label { background: #0b0c31e8; }
+.astro-planet { color: #c2c7e9; }
+.astro-planet:hover,
+.astro-planet.is-active { color: #e5e9ff; filter: drop-shadow(0 0 12px #858fef66); }
+.astro-planet:hover .astro-planet-label,
+.astro-planet.is-active .astro-planet-label { border-color: #a3b2ff88; }
+.astro-probe { color: #a3b2ff; filter: drop-shadow(0 0 9px #a3b2ff66); }
+.astro-contact-form input:focus,
+.astro-contact-form textarea:focus { outline-color: #a3b2ff; }
+.mode-switch button:focus-visible,
+.astro-language button:focus-visible,
+.astro-view button:focus-visible,
+.astro-view a:focus-visible { outline-color: #a3b2ff; }
+.astro-standby-card { border-color: #343567; background: radial-gradient(circle at 50% 0, #23256c, #0d0e3b 78%); }

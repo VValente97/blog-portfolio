@@ -499,7 +499,7 @@
     main.inert = astro;
     if (footer) footer.inert = astro;
     buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.siteMode === mode)));
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', astro ? '#050a12' : '#07111f');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000036');
     if (persist) {
       try { localStorage.setItem(storageKey, mode); } catch { /* Private mode can block storage. */ }
     }
